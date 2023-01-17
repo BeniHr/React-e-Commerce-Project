@@ -1,0 +1,32 @@
+.user-profile-wrapper {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-profile {
+    padding: 2rem;
+    border-radius: 0.25rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.user-profile .profile .profile-data {
+    font-weight: 500;
+}
+
+.user-profile .profile .profile-data span {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.user-profile .logout {
+    margin-top: 1rem;
+    width: 100%;
+    color: var(--light);
+    background-color: var(--primary);
+}
+
+.user-profile .logout:hover {
+    background-color: var(--primary-dark);
+}
