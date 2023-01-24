@@ -1,0 +1,14 @@
+button {
+    font-size: 0.875rem;
+    line-height: 0.875rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0.625rem 1.25rem;
+    border-width: 2px;
+    border-color: transparent;
+    outline: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0.25rem;
+  }

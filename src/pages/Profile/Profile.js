@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { AuthContext } from '../contexts/AuthContextProvider';
-import user from '../data/user';
+import { AuthContext } from '../../contexts/AuthContextProvider';
+import user from '../../data/user';
 
 export default function Profile() {
     const navigate = useNavigate();

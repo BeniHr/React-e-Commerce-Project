@@ -3,7 +3,7 @@ import './Login.css';
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { AuthContext } from '../contexts/AuthContextProvider';
+import { AuthContext } from '../../contexts/AuthContextProvider';
 
 export default function Login() {
     const navigate = useNavigate();

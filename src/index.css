@@ -1,3 +1,6 @@
+@import url('./styles/button.css');
+@import url('./styles/root.css');
+
 body {
   font-size: 16px;
   margin: 0;
@@ -7,37 +10,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-:root {
-  --primary: #11329f;
-  --primary-dark: #071c62;
 
-  --secondary: #eac700;
-  --secondary-dark: #907b00;
 
-  --info: #3283c5;
-  --info-dark: #2973ae;
-
-  --success: #15b422;
-  --success-dark: #10a01c;
-
-  --danger: #bb2124;
-  --danger-dark: #a51f21;
-
-  --light: #f5f5f5;
-  --dark: #0f0f0f;
-}
-
-button {
-  font-size: 0.875rem;
-  line-height: 0.875rem;
-  font-weight: 600;
-  font-family: inherit;
-  cursor: pointer;
-  padding: 0.625rem 1.25rem;
-  border-width: 2px;
-  border-color: transparent;
-  outline: 0;
-  appearance: none;
-  -webkit-appearance: none;
-  border-radius: 0.25rem;
-}
