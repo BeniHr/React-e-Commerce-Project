@@ -11,8 +11,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { AuthContext } from '../contexts/AuthContextProvider';
-import categories from '../data/categories';
+import { AuthContext } from '../../contexts/AuthContextProvider';
+import categories from '../../data/categories';
 
 export default function Navbar() {
     const navigate = useNavigate();

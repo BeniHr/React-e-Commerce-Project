@@ -1,0 +1,46 @@
+.product-card {
+    border-radius: 0.5rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 1rem 0.5rem;
+}
+
+.product-card .image {
+    max-width: 280px;
+    height: 320px;
+    object-fit: cover;
+}
+
+.product-card .name {
+    text-align: center;
+    color: var(--primary);
+}
+
+.product-card .price {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.product-card .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.product-card .add-to-wishlist {
+    background-color: var(--danger);
+    color: var(--white);
+}
+
+.product-card .add-to-wishlist:hover {
+    background-color: var(--danger-dark);
+}
+
+.product-card .add-to-cart {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.product-card .add-to-cart:hover {
+    background-color: var(--primary-dark);
+}

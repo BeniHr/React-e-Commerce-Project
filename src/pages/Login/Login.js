@@ -1,5 +1,7 @@
 import './Login.css';
 
+import { faEnvelope, faKey, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -29,26 +31,34 @@ export default function Login() {
             <h4 className="title">Login with your Account</h4>
             <div className="login-form-wrapper">
                 <div className="input-group">
-                    <label>Email</label>
+                    <label>
+                        <FontAwesomeIcon className="icon" icon={faEnvelope} /> Email
+                    </label>
                     <input
                         type="email"
                         name="email"
+                        placeholder="name@gmail.com"
                         onChange={(event) => setEmail(event.target.value)}
                     />
                 </div>
                 <div className="input-group">
-                    <label>Password</label>
+                    <label>
+                        <FontAwesomeIcon className="icon" icon={faKey} /> Password
+                    </label>
                     <input
                         type="password"
                         name="password"
+                        placeholder="*******"
                         onChange={(event) => setPassword(event.target.value)}
                     />
                 </div>
-                {email && password && (
-                    <button className="login-button" onClick={() => login()}>
-                        Login
-                    </button>
-                )}
+                <button
+                    disabled={!(email && password)}
+                    className="login-button"
+                    onClick={() => login()}
+                >
+                    <FontAwesomeIcon icon={faRightToBracket} /> Login
+                </button>
             </div>
         </div>
     );
