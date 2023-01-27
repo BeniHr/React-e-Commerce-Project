@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 
 import { getCategoryById } from '../../data/categories';
 import { getProductsFromCategory } from '../../data/product';
-import ProductCard from '../components/ProductCard/ProductCard';
+import ProductCard from '../components/ProductCard/Productcard';
 
 export default function Category() {
     const [categoryData, setCategoryData] = useState(null);

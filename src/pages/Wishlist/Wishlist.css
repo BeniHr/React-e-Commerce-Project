@@ -1,0 +1,19 @@
+.wishlist-products-container .wishlist-data {
+    margin-top: 3rem;
+    padding: 0 4rem;
+}
+
+.wishlist-products-container .wishlist-data .wishlist-data-title {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin: 0 0 1rem;
+}
+
+.wishlist-products-container .wishlist-products {
+    padding: 0 4rem;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}

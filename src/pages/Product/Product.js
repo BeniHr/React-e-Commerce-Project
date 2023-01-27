@@ -1,18 +1,42 @@
 import './Product.css';
 
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faHeartBroken } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { getProductByCategoryIdAndProductId } from '../../data/products';
+import { AuthContext } from '../../contexts/AuthContextProvider';
+import { ProductsContext } from '../../contexts/ProductsContextProvider';
+import { getProductByCategoryIdAndProductId } from '../../data/product';
+import ProductsViewed from '../components/ProductsViewed/ProductsViewed';
 
 export default function Product() {
+    const { isAuthenticated } = useContext(AuthContext);
+    const {
+        addProductToViewed,
+        isProductInWishlist,
+        isProductInCart,
+        addProductToCart,
+        addProductToWishlist,
+        productsInWishlist,
+        productsInCart,
+    } = useContext(ProductsContext);
     const { categoryId, productId } = useParams();
     const [product, setProduct] = useState(null);
     const [productProperties, setProductProperties] = useState([]);
 
+    const [isInWishlist, setIsInWishlist] = useState(false);
+    const [isInCart, setIsInCart] = useState(false);
+
     useEffect(() => {
+        if (product) {
+            setIsInCart(isProductInCart({ categoryId, productId: product.id }));
+            setIsInWishlist(isProductInWishlist({ categoryId, productId: product.id }));
+        }
+    }, [productsInWishlist, productsInCart]);
+
+    useEffect(() => {
+        addProductToViewed({ categoryId, productId });
         setProduct(getProductByCategoryIdAndProductId(categoryId, productId));
     }, [categoryId, productId]);
 
@@ -38,12 +62,31 @@ export default function Product() {
                             <h1 className="product-name">{product.name}</h1>
                             <p className="product-description">{product.description}</p>
                             <p className="product-price">${product.price}</p>
-                            <div className="product-buttons">
-                                <button className="product-add-to-wishlist">
-                                    <FontAwesomeIcon icon={faHeart} />
-                                </button>
-                                <button className="product-add-to-cart">Add to cart</button>
-                            </div>
+                            {isAuthenticated && (
+                                <div className="product-buttons">
+                                    <button
+                                        className="product-add-to-wishlist"
+                                        onClick={() =>
+                                            addProductToWishlist({
+                                                categoryId,
+                                                productId: product.id,
+                                            })
+                                        }
+                                    >
+                                        <FontAwesomeIcon
+                                            icon={isInWishlist ? faHeartBroken : faHeart}
+                                        />
+                                    </button>
+                                    <button
+                                        className="product-add-to-cart"
+                                        onClick={() =>
+                                            addProductToCart({ categoryId, productId: product.id })
+                                        }
+                                    >
+                                        {isInCart ? 'Remove from cart' : 'Add to cart'}
+                                    </button>
+                                </div>
+                            )}
                         </div>
                     </div>
                     <div className="product-properties">
@@ -64,6 +107,7 @@ export default function Product() {
                             </tbody>
                         </table>
                     </div>
+                    <ProductsViewed />
                 </>
             )}
         </>

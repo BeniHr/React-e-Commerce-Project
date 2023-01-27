@@ -1,0 +1,19 @@
+.recent-products-container .recent-data {
+    margin-top: 3rem;
+    padding: 0 4rem;
+}
+
+.recent-products-container .recent-data .recent-data-title {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin: 0 0 1rem;
+}
+
+.recent-products-container .recent-products {
+    padding: 0 4rem;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}

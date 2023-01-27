@@ -1,0 +1,14 @@
+.footer {
+    margin-top: 3rem;
+    background-color: var(--dark);
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.footer-message {
+    font-weight: 500;
+    font-size: 1.125rem;
+}
